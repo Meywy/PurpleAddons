@@ -1,0 +1,17 @@
+
+[dungeons]
+
+	[dungeons.devices]
+		ss = true
+		i4 = true
+
+	[dungeons.qol]
+		blood_ready = true
+		blood_done = true
+		auto_potion = true
+
+[dungeon]
+
+	[dungeon.devices]
+		i4 = false
+

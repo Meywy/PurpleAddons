@@ -1,0 +1,8 @@
+{
+    "name": "PurpleAddons",
+    "creator": "purple",
+    "description": "Skyblock qol",
+    "version": "1.0",
+    "requires": ["Vigilance", "BloomCore"],
+    "entry": "index.js"
+  }
