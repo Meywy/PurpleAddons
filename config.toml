@@ -5,8 +5,8 @@
 		wish = true
 
 	[dungeons.devices]
-		ss = true
-		i4 = true
+		ss = false
+		i4 = false
 
 	[dungeons.heal_and_tonk]
 		wish = false
@@ -18,6 +18,7 @@
 	[dungeons.qol]
 		blood_ready = true
 		blood_done = true
+		crush_notify = false
 		auto_potion = true
 
 [dungeon]
