@@ -31,7 +31,6 @@ class Settings {
         subcategory: "QOL",
     })
     autopot = false;
-    
     @SwitchProperty({
         name: "Blood Ready",
         description: "Notify when blood mobs spawned",
@@ -39,7 +38,6 @@ class Settings {
         subcategory: "QOL",
     })
     bloodReady = false;
-
     @SwitchProperty({
         name: "Blood Done",
         description: "Notify when blood is done",
@@ -47,7 +45,13 @@ class Settings {
         subcategory: "QOL",
     })
     bloodDone = false;
-
+    @SwitchProperty({
+        name: "Crush notify",
+        description: "Notfies you when storm is crushed",
+        category: "Dungeons",
+        subcategory: "QOL"
+    })
+    stormCrush = false;
     @SwitchProperty({
         name: "i4",
         description: "annouces i4, works similary to UA one",
@@ -62,10 +66,24 @@ class Settings {
         subcategory: "Devices"
     })
     simonsays = false;
+    @SwitchProperty({
+        name: "Wish",
+        description: "Annouces when to wish in F7/M7",
+        category: "Dungeons",
+        subcategory: "Heal and Tonk"
+    })
+    healerWish = false;
+    @SwitchProperty({
+        name: "Tank Ult",
+        description: "Annouces when to ult",
+        category: "Dungeons",
+        subcategory: "Heal and Tonk"
+    })
+    tankUlt = false;
 
     constructor() {
         this.initialize(this);
-        this.setCategoryDescription("General", "&d&lDev: Purple")
+        this.setCategoryDescription("General", "&5&lDev: Purple")
     }
 }
 
