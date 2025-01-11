@@ -47,7 +47,7 @@ class Settings {
     bloodDone = false;
     @SwitchProperty({
         name: "Crush notify",
-        description: "Notfies you when storm is crushed",
+        description: "Notify when storm is crushed",
         category: "Dungeons",
         subcategory: "QOL"
     })
