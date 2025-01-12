@@ -17,7 +17,7 @@ class Settings {
         description: "Click for surprise",
         category: "General",
         subcategory: "Special Surprise",
-        placeholder: "Click"
+        placeholder: "Click!"
     })
     githubButtonAction() {
         java.awt.Desktop.getDesktop().browse(new java.net.URI(`https://github.com/Meywy/PurpleAddons`));
