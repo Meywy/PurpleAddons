@@ -20,7 +20,7 @@ function i4IncompleteMsg() {
         ChatLib.command(`pc ${prefix2} i4 not done`)
     }
 }
-
+//inconsistent with the rest of the functions, but it's fine
 function i4DonedMsg(player, reminder = false) {
     if (Settings.i4) {
         displayTitle(40, 5, `&ai4 Completed`, 80)
@@ -42,7 +42,6 @@ function i4Cleaner() {
         i4DonedMsg("", true);
         return;
     }
-    
 }
 // goldor start \\
 onChatPacket(() => {
@@ -53,7 +52,7 @@ onChatPacket(() => {
     i4done.value = false
     setTimeout(() => {
         if (i4done.value == true || inGoldor == false) {
-            i4Incomplete()
+            i4Incomplete() // error says it doesn't exist
         }
     }, 15000)
 }).setCriteria("[BOSS] Goldor: Who dares trespass into my domain?")
