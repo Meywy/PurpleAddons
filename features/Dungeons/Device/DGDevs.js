@@ -29,6 +29,21 @@ function i4DonedMsg(player, reminder = false) {
     }
 }
 
+function i4Cleaner() {
+    if (goldorPhase == 5) {
+        inGoldor.value == false;
+        return
+    }
+    if (goldorPhase == 4 && i4done.value == false) {
+        i4IncompleteMsg();
+        return;
+    }
+    if (goldorPhase == 4 && i4done.value == true) {
+        i4DonedMsg("", true);
+        return;
+    }
+    
+}
 // goldor start \\
 onChatPacket(() => {
     starti4Time = Date.now()
@@ -46,25 +61,15 @@ onChatPacket(() => {
 // i4, ss logic \\
 register("chat", (player, devTerm, numberOne, numberTwo) => {
     if ((numberOne == 7 && numberTwo == 7) || (numberOne == 8 && numberTwo == 8)) {
-        goldorPhase = goldorPhase + 1
-        if (goldorPhase == 4) {
-            if (i4done.value == false) {
-                i4IncompleteMsg();
-            } else if (i4done.value == true) {
-                i4DonedMsg("", true)
-            }
-        } else if (goldorPhase == 5) {
-            inGoldor.value == false
-        }
+        goldorPhase += 1;
+        i4Cleaner();
     }
 
-    if (getClassOther(player)[0] == 'B' && Settings.i4 && !i4done.value && devTerm == "device") {
-        if (Date.now()-starti4Time < 12000) {
-            i4done.value = true
-            starti4Time = 0
-            i4DonedMsg(player, false)
-            return
-        }
+    if (getClassOther(player)[0] == 'B' && Settings.i4 && !i4done.value && devTerm == "device" && Date.now()-starti4Time < 12000) {
+        i4done.value = true;
+        starti4Time = 0;
+        i4DonedMsg(player, false);
+        return;
     }
 
     if (devTerm != "device" || getClassOther(player)[0] == 'B') return
