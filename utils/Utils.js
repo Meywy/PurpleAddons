@@ -1,7 +1,7 @@
 import { registerWhen } from "../../BloomCore/utils/Utils";
 
-export const prefix = "&5PurpleAddons &a»&r"
-export const prefix2 = "PurpleAddons »"
+export const prefix = "&5PurpleAddons &a>&r"
+export const prefix2 = "PurpleAddons >"
 export const line = "&m-".repeat(ChatLib.getChatWidth() / 6);
 
 // Credit: UA
@@ -12,3 +12,9 @@ registerWhen(register("step", () => {
         notePling.value = false
     }
 }), () => notePling)
+
+export const getDataJson = new PogObject('PurpleAddons', {
+    data: {
+        firstLoad: true
+    }
+}, data.json)

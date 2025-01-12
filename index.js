@@ -1,5 +1,5 @@
 import Settings from "./config";
-
+import { getDataJson, prefix } from "./utils/Utils";
 
 // features
 import "./features/Dungeons/General/DGGen"
@@ -10,3 +10,13 @@ import "./features/Mining/General/MiningGen"
 
 // to open the config gui use the "openGUI" function
 register("command", () => Settings.openGUI()).setName("purpleaddons").setAliases("pa").setAliases("purpa").setAliases("padds").setAliases("paddons");
+
+data = getDataJson
+
+if(data.data.firstLoad){
+    setTimeout(() => {
+        ChatLib.chat(`\n${prefix.replace(">", "")}\n&aThanks for using PurpleAddons!\n&aIf you have any suggestions or bugs, please open issue request on github\n&aUsage: /pa`)
+        data.data.firstLoad = false
+        data.save()
+    }, 300)
+}
