@@ -1,10 +1,11 @@
 import Settings from "./config";
-import { prefix, prefix2 } from "./utils/Utils"
 
 
 // features
-import "./features/Dungeons/QOL"
-import "./features/Dungeons/Devices"
+import "./features/Dungeons/General/DGGen"
+import "./features/Dungeons/Device/DGDevs"
+import "./features/Dungeons/HealerAndTank/HealerAndTank"
+import "./features/Mining/General/MiningGen"
 
 
 // to open the config gui use the "openGUI" function

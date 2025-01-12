@@ -3,7 +3,7 @@ import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchPrope
 const version = JSON.parse(FileLib.read("PurpleAddons", "metadata.json")).version
 @Vigilant("PurpleAddons", `PurpleAddons v${version}`, {
     getCategoryComparator: () => (a, b) => {
-        const categories = ["General", "Dungeons"];
+        const categories = ["General", "Dungeons", "Mining"];
         console.log("Comparing:", a.name, b.name);
         return categories.indexOf(a.name) - categories.indexOf(b.name);
     }
@@ -20,7 +20,7 @@ class Settings {
         placeholder: "Click"
     })
     githubButtonAction() {
-        java.awt.Desktop.getDesktop().browse(new java.net.URI(`https://github.com/Meywy`));
+        java.awt.Desktop.getDesktop().browse(new java.net.URI(`https://github.com/Meywy/PurpleAddons`));
     }
 
     // Dungeons \\
@@ -28,28 +28,28 @@ class Settings {
         name: "Auto Potion",
         description: "Automatically opens potion bag on start of the run",
         category: "Dungeons",
-        subcategory: "QOL",
+        subcategory: "General",
     })
     autopot = false;
     @SwitchProperty({
         name: "Blood Ready",
         description: "Notify when blood mobs spawned",
         category: "Dungeons",
-        subcategory: "QOL",
+        subcategory: "General",
     })
     bloodReady = false;
     @SwitchProperty({
         name: "Blood Done",
         description: "Notify when blood is done",
         category: "Dungeons",
-        subcategory: "QOL",
+        subcategory: "General",
     })
     bloodDone = false;
     @SwitchProperty({
         name: "Crush notify",
         description: "Notify when storm is crushed",
         category: "Dungeons",
-        subcategory: "QOL"
+        subcategory: "General"
     })
     stormCrush = false;
     @SwitchProperty({
@@ -80,6 +80,13 @@ class Settings {
         subcategory: "Heal and Tonk"
     })
     tankUlt = false;
+    @SwitchProperty({
+        name: "Mining Ability",
+        description: "Annouces when mining ability is ready",
+        category: "Mining",
+        subcategory: "General"
+    })
+    miningAbility = false;
 
     constructor() {
         this.initialize(this);

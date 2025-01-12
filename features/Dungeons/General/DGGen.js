@@ -1,8 +1,8 @@
 
-import Settings from "../../config";
-import { prefix } from "../../utils/Utils";
-import { registerWhen } from "../../../BloomCore/utils/Utils";
-import { onChatPacket } from "../../../BloomCore/utils/Events";
+import Settings from "../../../config";
+import { prefix } from "../../../utils/Utils";
+import { registerWhen } from "../../../../BloomCore/utils/Utils";
+import { onChatPacket } from "../../../../BloomCore/utils/Events";
 
 
 // Variables \\

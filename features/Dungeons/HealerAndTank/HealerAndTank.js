@@ -1,8 +1,10 @@
-import Settings from '../../settings';
-import { displayTitle, getClass } from '../../utils/title';
-import { registerWhen } from "../../../BloomCore/utils/Utils";
-import { onChatPacket } from '../../../BloomCore/utils/Events';
-import { notePling, prefix2 } from '../../utils/Utils';
+
+import Settings from "../../../config";
+import { displayTitle } from "../../../utils/title";
+import { getClass } from "../../../utils/player";
+import { registerWhen } from "../../../../BloomCore/utils/Utils";
+import { onChatPacket } from "../../../../BloomCore/utils/Events";
+import { notePling, prefix2 } from "../../../utils/Utils";
 
 registerWhen(onChatPacket(() => {
     

@@ -1,15 +1,15 @@
 
-import Settings from "../../config";
-import { displayTitle } from "../../utils/title"
-import { prefix, prefix2 } from "../../utils/Utils";
-import { getClassOther } from "../../utils/player";
-import { onChatPacket } from "../../../BloomCore/utils/Events";
+import Settings from "../../../config";
+import { displayTitle } from "../../../utils/title"
+import { prefix, prefix2 } from "../../../utils/Utils";
+import { getClassOther } from "../../../utils/player";
+import { onChatPacket } from "../../../../BloomCore/utils/Events";
 
 // Variables \\
 let goldorPhase = 0
 let starti4Time = 0
 let ssStartTimer = 0
-export let i4 = {value: false}
+export let i4done = {value: false}
 export let inGoldor = {value: false}
 
 // functions :3 \\
@@ -23,7 +23,7 @@ function i4IncompleteMsg() {
 
 function i4DonedMsg(player, reminder = false) {
     if (Settings.i4) {
-        displayTitle(40, 5, `&ai4 Completed`)
+        displayTitle(40, 5, `&ai4 Completed`, 80)
         ChatLib.chat(`${prefix} &ai4 Completed`)
         ChatLib.command(reminder ? `pc ${prefix2} i4 is completed` : `pc ${prefix2} i4 is completed by ${player}`)
     }
@@ -36,7 +36,7 @@ onChatPacket(() => {
     goldorPhase = 1
     inGoldor.value = true
     i4done.value = false
-    setTimeout(() =>{
+    setTimeout(() => {
         if (i4done.value == true || inGoldor == false) {
             i4Incomplete()
         }
