@@ -1,8 +1,9 @@
 
 import Settings from "../../../config";
-import { prefix } from "../../../utils/Utils";
+import { notePling, prefix, prefix2 } from "../../../utils/Utils";
 import { registerWhen } from "../../../../BloomCore/utils/Utils";
 import { onChatPacket } from "../../../../BloomCore/utils/Events";
+import { displayTitle } from "../../../utils/title";
 
 
 // Variables \\
@@ -12,10 +13,8 @@ let hasOpened = false;
 // Features \\
 registerWhen(onChatPacket(() => {
     if (Settings.autopot) {
-        ChatLib.chat(`${prefix} this shouls show in chat`);
-
         if (!hasOpened) {
-            ChatLib.chat(prefix + "&aopening.")
+            ChatLib.chat(`${prefix} &aopening.`)
             ChatLib.command("pb")
             hasOpened = true;
         }
@@ -24,15 +23,17 @@ registerWhen(onChatPacket(() => {
 
 registerWhen(onChatPacket(() => {
     if (Settings.bloodReady) {
-        Client.showTitle("&cBlood Ready!", "", 0, 70, 0)
-            ChatLib.command(`pc ${prefix2} Blood Ready!`)
+        displayTitle(40, 5, `&cBlood ready!`, 80)
+        ChatLib.command(`pc ${prefix2} Blood Ready!`)
+        notePling.value = true
     }
 }).setCriteria("[BOSS] The Watcher: That will be enough for now."), () => Settings.bloodReady)
 
 registerWhen(onChatPacket(() => {
     if (Settings.bloodDone) {
-        Client.showTitle("&cBlood Done!", "", 0, 70, 0)
+        displayTitle(40, 5, `&cBlood Done!`, 80)
         ChatLib.command(`pc ${prefix2} Blood Done!`)
+        notePling.value = true
     }
 }).setCriteria("[BOSS] The Watcher: You have proven yourself. You may pass."), () => Settings.bloodDone)
 
