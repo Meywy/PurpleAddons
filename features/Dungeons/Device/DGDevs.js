@@ -52,7 +52,7 @@ onChatPacket(() => {
     i4done.value = false
     setTimeout(() => {
         if (i4done.value == true || inGoldor == false) {
-            i4Incomplete() // error says it doesn't exist
+            i4IncompleteMsg() // should work now
         }
     }, 15000)
 }).setCriteria("[BOSS] Goldor: Who dares trespass into my domain?")
