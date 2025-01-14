@@ -3,7 +3,7 @@ import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchPrope
 const version = JSON.parse(FileLib.read("PurpleAddons", "metadata.json")).version
 @Vigilant("PurpleAddons", `PurpleAddons v${version}`, {
     getCategoryComparator: () => (a, b) => {
-        const categories = ["General", "Dungeons", "Mining"];
+        const categories = ["General", "Dungeons", "Mining", "Misc"];
         console.log("Comparing:", a.name, b.name);
         return categories.indexOf(a.name) - categories.indexOf(b.name);
     }
@@ -80,6 +80,8 @@ class Settings {
         subcategory: "Heal and Tonk"
     })
     tankUlt = false;
+
+    // Mining \\
     @SwitchProperty({
         name: "Mining Ability",
         description: "Annouces when mining ability is ready",
@@ -87,6 +89,15 @@ class Settings {
         subcategory: "General"
     })
     miningAbility = false;
+
+    // Misc \\
+    @SwitchProperty({
+        name: "Clean Chat",
+        description: "Cleans chat from unwanted messages",
+        category: "Misc"
+    })
+    cleanChat = false;
+
 
     constructor() {
         this.initialize(this);
