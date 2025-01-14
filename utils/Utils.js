@@ -1,4 +1,5 @@
 import { registerWhen } from "../../BloomCore/utils/Utils";
+import PogObject from "../../PogData"
 
 export const prefix = "&5PurpleAddons &a>&r"
 export const prefix2 = "PurpleAddons >"
@@ -17,4 +18,4 @@ export const getDataJson = new PogObject('PurpleAddons', {
     data: {
         firstLoad: true
     }
-}, data.json)
+}, "data.json")
