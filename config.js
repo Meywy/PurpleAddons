@@ -11,6 +11,9 @@ const version = JSON.parse(FileLib.read("PurpleAddons", "metadata.json")).versio
 
 class Settings {
 
+    eelocationgui = new Gui();
+    
+
     // General \\
     @ButtonProperty({
         name: "Surprise",
@@ -80,6 +83,21 @@ class Settings {
         subcategory: "Heal and Tonk"
     })
     tankUlt = false;
+    @SwitchProperty({
+        name: "ee",
+        description: "ee messages",
+        category: "Dungeons",
+    })
+    @ButtonProperty({
+        name: "EE location",
+		category: "Dungeons",
+        placeholder: "Move"
+    })
+    earlyEnter = false;
+    
+    MoveEELocGui() {
+        this.eelocationgui.open()
+    };
 
     // Mining \\
     @SwitchProperty({
