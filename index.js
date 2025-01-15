@@ -5,6 +5,7 @@ import { getDataJson, prefix } from "./utils/Utils";
 import "./features/Dungeons/General/DGGen"
 import "./features/Dungeons/Device/DGDevs"
 import "./features/Dungeons/HealerAndTank/HealerAndTank"
+import "./features/Dungeons/General/earlyEnter"
 import "./features/Mining/General/MiningGen"
 import "./features/Misc/CleanChat"
 
