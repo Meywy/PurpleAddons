@@ -130,13 +130,30 @@ const uselessMsgs = [
     /.+ Amethyst  Gemstone .*/,
     /Prehistoric Egg/,
     /Diamond Essence .*/,
-    /Gold Essence .*/
+    /Gold Essence .*/,
 
 ]
+const stashMsgs = [
+    /You have .+ materials stashed away!/,
+    /(This totals .+ type of material stashed!)/,
+    />>> CLICK HERE to pick them up! <<</
+]
+
+const stashMessage = new Message(
+    new TextComponent("&3You have something in stash!").setClick("run_command", "/pickupstash").setHoverValue("&7Click to pick up your stash!"),
+)
 
 uselessMsgs.forEach((message) => {
         register("chat", event => {
             if (!Settings.cleanChat) return;
             cancel(event)
         }).setCriteria(message)
+})
+
+stashMsgs.forEach((message) => {
+    register("chat", event => {
+        if (!Settings.cleanerStash) return;
+        cancel(event)
+        ChatLib.chat(stasgMessage)
+    }).setCriteria(message)
 })

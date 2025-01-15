@@ -97,6 +97,12 @@ class Settings {
         category: "Misc"
     })
     cleanChat = false;
+    @SwitchProperty({
+        name: "Cleaner Stash",
+        description: "Makes the stash message much more cleaner",
+        category: "Misc"
+    })
+    cleanerStash = false;
 
 
     constructor() {
