@@ -19,7 +19,7 @@ export function getPlayerName(player) {
 
     return name.split(' ')[0];
 }
-
+//no usages start
 /**
  * Strips the user of the rank.
  *
@@ -52,7 +52,7 @@ export function getGuildName(player) {
 
     return name;
 }
-
+//no usages end
 /**
  * Returns True if entity is player otherwise False.
  * 

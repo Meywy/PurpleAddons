@@ -12,7 +12,7 @@ const version = JSON.parse(FileLib.read("PurpleAddons", "metadata.json")).versio
 class Settings {
 
     // General \\
-    @ButtonProperty({
+    @ButtonProperty({ //no usages
         name: "Surprise",
         description: "Click for surprise",
         category: "General",
