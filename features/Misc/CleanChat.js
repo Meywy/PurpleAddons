@@ -154,6 +154,6 @@ stashMsgs.forEach((message) => {
     register("chat", event => {
         if (!Settings.cleanerStash) return;
         cancel(event)
-        ChatLib.chat(stasgMessage)
+        ChatLib.chat(stashMessage)
     }).setCriteria(message)
 })
