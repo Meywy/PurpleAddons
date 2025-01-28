@@ -163,11 +163,6 @@ const uselessMsgs = [
 /FISHING FESTIVAL The festival is now underway! Break out your fishing rods and watch out for sharks!/
 ];
 
-export default uselessMsgs;
-
-];
-
-export default uselessMsgs;
 const stashMsgs = [
     /You have .+ materials stashed away!/,
     /(This totals .+ type of material stashed!)/,
