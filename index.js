@@ -4,7 +4,6 @@ import { getDataJson, prefix } from "./utils/Utils";
 
 // features
 import "./features/Dungeons/General/DGGen"
-import "./features/Dungeons/Device/HidePlayers"
 import "./features/Dungeons/HealerAndTank/HealerAndTank"
 import "./features/Dungeons/M7/Twilight"
 import "./features/Mining/General/MiningGen"
