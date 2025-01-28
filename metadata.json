@@ -1,8 +1,8 @@
 {
     "name": "PurpleAddons",
     "creator": "purple",
-    "description": "Skyblock qol",
-    "version": "1.0",
-    "requires": ["Vigilance", "BloomCore", "PogData"],
+    "description": "By skyblock player fo skyblock players",
+    "version": "2.0.0",
+    "requires": ["Vigilance", "BloomCore", "PogData", "Axios"],
     "entry": "index.js"
   }

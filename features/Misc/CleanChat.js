@@ -131,6 +131,7 @@ const uselessMsgs = [
     /Prehistoric Egg/,
     /Diamond Essence .*/,
     /Gold Essence .*/,
+    /Moved .+ Ender Pearl from your Sacks to your inventory./,
 
 ]
 const stashMsgs = [

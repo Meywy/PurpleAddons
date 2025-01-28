@@ -11,6 +11,9 @@ const version = JSON.parse(FileLib.read("PurpleAddons", "metadata.json")).versio
 
 class Settings {
 
+    eelocationgui = new Gui()
+    
+
     // General \\
     @ButtonProperty({
         name: "Surprise",
@@ -53,19 +56,19 @@ class Settings {
     })
     stormCrush = false;
     @SwitchProperty({
-        name: "i4",
-        description: "annouces i4, works similary to UA one",
+        name: "Energy Crystal Alert",
+        description: "Alerts when you have to place energy crystal",
         category: "Dungeons",
-        subcategory: "Devices"
+        subcategory: "M7"
     })
-    i4 = false;
+    EnergyCrystalAlert = false;
     @SwitchProperty({
-        name: "SS",
-        description: "annouces ss, works similary to UA one",
+        name: "Hide Players",
+        description: "Hides players at dev",
         category: "Dungeons",
         subcategory: "Devices"
     })
-    simonsays = false;
+    hidePlayers = false;
     @SwitchProperty({
         name: "Wish",
         description: "Annouces when to wish in F7/M7",
@@ -80,6 +83,27 @@ class Settings {
         subcategory: "Heal and Tonk"
     })
     tankUlt = false;
+    @SwitchProperty({
+        name: "Twilight Notify",
+        description: "Notifies when twilight arrow poison is needed",
+        category: "Dungeons",
+        subcategory: "M7"
+    })
+    TwilightNotify = false;
+    @SwitchProperty({
+        name: "Rag",
+        description: "Tells when rag casts",
+        category: "Dungeons",
+        subcategory: "M7"
+    })
+    ragAxe = false;
+    @SwitchProperty({
+        name: "Leap Annoucemet",
+        description: "Annouces on leap",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    leapAnnouce = false;
 
     // Mining \\
     @SwitchProperty({
@@ -103,7 +127,6 @@ class Settings {
         category: "Misc"
     })
     cleanerStash = false;
-
 
     constructor() {
         this.initialize(this);
