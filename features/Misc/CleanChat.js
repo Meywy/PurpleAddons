@@ -132,6 +132,24 @@ const uselessMsgs = [
     /Diamond Essence .*/,
     /Gold Essence .*/,
     /Moved .+ Ender Pearl from your Sacks to your inventory./,
+    /▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬/,
+    /  CHEST LOCKPICKED.*/,
+    /  REWARDS/,
+    /You uncovered a treasure chest!/,
+    /    ✎ Rough Sapphire Gemstone.*/,
+    /    ❤ Rough Ruby Gemstone.*/,
+    /    Ascension Rope/,
+    /    Gemstone Powder.*/,
+    /    Gold Essence/,
+    /    Wishing Compass x\d+/,
+    /    Diamond Essence x\d/,
+    /    ✎ Flawed Sapphire Gemstone x\d+/,
+    /    Gold Essence x\d+/,
+    /    Diamond Essence/,
+    /    Golden Essence/,
+    /    ✎ Flawed Sapphire Gemstone.*/,
+    /    /
+
 
 ]
 const stashMsgs = [

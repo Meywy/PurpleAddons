@@ -2,7 +2,7 @@
     "name": "PurpleAddons",
     "creator": "purple",
     "description": "By skyblock player fo skyblock players",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "requires": ["Vigilance", "BloomCore", "PogData", "Axios"],
     "entry": "index.js"
   }

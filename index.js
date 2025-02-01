@@ -1,6 +1,6 @@
 import Settings from "./config";
 import axios from "../axios";
-import { getDataJson, prefix } from "./utils/Utils";
+import { getDataJson, prefix, line } from "./utils/Utils";
 
 // features
 import "./features/Dungeons/General/DGGen"
@@ -14,12 +14,35 @@ import "./features/Dungeons/M7/Crystal"
 
 // register the commands
 import "./features/Commands/pearls"
-
-
-register("command", () => Settings.openGUI()).setName("purpleaddons").setAliases("pa").setAliases("purpa").setAliases("padds").setAliases("paddons");
+import "./features/Commands/leaps"
+import "./features/Commands/instanceJoin"
+import "./features/Commands/jerry"
 
 data = getDataJson
 const version = JSON.parse(FileLib.read("PurpleAddons", "metadata.json")).version
+let updateNoti = false
+
+register("command", (arg) => {
+    switch (arg) {
+        case undefined:
+            Settings.openGUI();
+            break;
+        case 'help':
+            ChatLib.chat(line)
+            ChatLib.chat(ChatLib.getCenteredText(`${prefix} &5Command List`))
+            ChatLib.chat(line)
+            ChatLib.chat('')
+            ChatLib.chat("&d/pa (/purpadds, /purp, /chloricisbad, /purpleaddons) &f- Opens Settings GUI.")
+            ChatLib.chat("&d/pearls (/ep) &f- Gets Ender Pearls from your sack.")
+            ChatLib.chat("&d/sp &f- Spirit Leaps from your sack.")
+            ChatLib.chat("&d/ij (/jerry) &f- Inflatable Jerry from your sack.")
+            ChatLib.chat("&d/f [1-7] &f- Enters dungeon floor")
+            ChatLib.chat("&d/m [1-7] &f- Enters mastermode floor")
+            ChatLib.chat("&d/k [1-5] &f- Enters kuudra")
+            break;
+    }
+
+}).setName("pa").setAliases('purpadds', 'purp', 'chloricisbad', 'purpleaddons')
 
 if(data.data.firstLoad){
     setTimeout(() => {
@@ -30,31 +53,32 @@ if(data.data.firstLoad){
     }, 300)
 }
 
-let ctNoti = false
 register("worldLoad", () => {
-    if (ctNoti) return
+    if (updateNoti) return
     axios.get(`https://chattriggers.com/api/modules/purpleaddons`)
     .then(res => {
-        let changes = res.data.releases[0].changelog.toString().replaceAll("\r", "")
         const newVer = res.data.releases[0].releaseVersion
         if (data.data.last_version !== version) {
             if (data.data.last_version === undefined) return
-            ChatLib.chat(`\n${prefix}\n&5PurpAdds has updated! &ev${data.data.last_version} ➜ v${version}`)
+            ChatLib.chat(`\n${line}`)
+            ChatLib.chat(ChatLib.getCenteredText(prefix))
+            ChatLib.chat(`${line}\n&aUpdate completed! &ev${data.data.last_version} -> v${version}`)
             data.data.last_version = version
             data.save()
-            ctNoti = true;
+            updateNoti = true;
         } else {
             // NWJN || https://www.chattriggers.com/modules/v/NwjnAddons
                 if (newVer == version) return;
-                if (version.includes("pre")) return;
-                
                 if (newVer != version) {
-                    ChatLib.chat(`\n${prefix}\n&aPurpAdds has new update! &2v${version} ➜ v${newVer}\n&eChangelog:\n${changes}`)
-                    new TextComponent(`&a&lClick here to update!\n`)
+                    ChatLib.chat(`\n${line}`)
+                    ChatLib.chat(ChatLib.getCenteredText(prefix))
+                    ChatLib.chat(line)
+                    ChatLib.chat(ChatLib.getCenteredText(`&aNew update! &2v${version} -> v${newVer}`))
+                    new TextComponent(ChatLib.getCenteredText(`&a&lClick here to update!\n`))
                     .setClickAction("run_command")
                     .setClickValue(`/ct load`)
                     .chat()
-                    ctNoti = true;
+                    updateNoti = true;
                 }
             //
         }

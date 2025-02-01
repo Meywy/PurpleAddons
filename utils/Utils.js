@@ -3,7 +3,7 @@ import PogObject from "../../PogData";
 
 export const prefix = "&f[&5PurpleAddons&f]&r"
 export const prefix2 = "[PurpleAddons]"
-export const line = "&m-".repeat(ChatLib.getChatWidth() / 6);
+export const line = ChatLib.getChatBreak(`&m-`);
 
 export let notePling = { value: false }
 registerWhen(register("step", () => {
