@@ -12,7 +12,7 @@ register("command", () => {
     const toGive = 16 - stack.getStackSize()
         if (toGive == 0) return
         ChatLib.command(`gfs ender_pearl ${toGive}`, false)
-        ChatLib.chat(`${prefix} &fGrabbed &b${toGive} &fpearls`)
+        ChatLib.chat(`${prefix} &fGrabbed &b${toGive} &fpearls.`)
         
 }).setName("pearls")
 
