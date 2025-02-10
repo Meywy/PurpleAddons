@@ -11,6 +11,7 @@ import "./features/Misc/CleanChat"
 import "./features/Dungeons/M7/Rag"
 import "./features/Dungeons/General/LeapAnnouc"
 import "./features/Dungeons/M7/Crystal"
+import "./features/Dungeons/M7/PosMsgs"
 
 // register the commands
 import "./features/Commands/pearls"

@@ -104,6 +104,26 @@ class Settings {
         subcategory: "General"
     })
     leapAnnouce = false;
+    @SwitchProperty({
+        name: "Debuff waypoints",
+        description: "waypoints for debuff",
+        category: "Dungeons",
+        subcategory: "M7"
+    })
+    debuffWp = false;
+    @SwitchProperty({
+        name: "ArrowStack waypoints",
+        description: "waypoints for arrow stack",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    ArrowStackWayPoints = false;
+    @SwitchProperty({
+        name: "PosMsgs",
+        category: "Dungeons",
+        subcategory: "M7"
+    })
+    posMsgs = false;
 
     // Mining \\
     @SwitchProperty({
