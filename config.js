@@ -16,10 +16,10 @@ class Settings {
 
     // General \\
     @ButtonProperty({
-        name: "Surprise",
-        description: "Click for surprise",
+        name: "Github",
+        description: "Star my repo, thanks :3",
         category: "General",
-        subcategory: "Special Surprise",
+        subcategory: "Star :3",
         placeholder: "Click!"
     })
     githubButtonAction() {
