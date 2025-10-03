@@ -1,4 +1,4 @@
-// Credit UA
+// * Credit: UwUAddons
 
 let timer = new Text('').setScale(5).setShadow(true).setAlign('CENTER')
 let titleHeight = 80

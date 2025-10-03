@@ -1,0 +1,72 @@
+[
+    {
+        "category": "Dungeons",
+        "settings": [
+            {
+                "type": 6,
+                "name": "bloodDone",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "bloodReady",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "leapAnnoucement",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "ragAxe",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "stormCrush",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "crystalAlert",
+                "value": true
+            }
+        ]
+    },
+    {
+        "category": "Slayers",
+        "settings": [
+            {
+                "type": 6,
+                "name": "slayerFailed",
+                "value": true
+            }
+        ]
+    },
+    {
+        "category": "Mining",
+        "settings": [
+            {
+                "type": 6,
+                "name": "abilityAlert",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "fetchurItems",
+                "value": true
+            }
+        ]
+    },
+    {
+        "category": "Misc",
+        "settings": [
+            {
+                "type": 6,
+                "name": "noSelfieCam",
+                "value": true
+            }
+        ]
+    }
+]

@@ -1,157 +1,72 @@
-import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchProperty, Color } from 'Vigilance';
+import Settings from "../Amaterasu/core/Settings"
+import DefaultConfig from "../Amaterasu/core/DefaultConfig"
 
-const version = JSON.parse(FileLib.read("PurpleAddons", "metadata.json")).version
-@Vigilant("PurpleAddons", `PurpleAddons v${version}`, {
-    getCategoryComparator: () => (a, b) => {
-        const categories = ["General", "Dungeons", "Mining", "Misc"];
-        console.log("Comparing:", a.name, b.name);
-        return categories.indexOf(a.name) - categories.indexOf(b.name);
-    }
-})
+const defaultConf = new DefaultConfig("PurpleAddons", "data/settings.json")
 
-class Settings {
-
-    eelocationgui = new Gui()
     
-
-    // General \\
-    @ButtonProperty({
-        name: "Github",
-        description: "Star my repo, thanks :3",
-        category: "General",
-        subcategory: "Star :3",
-        placeholder: "Click!"
-    })
-    githubButtonAction() {
-        java.awt.Desktop.getDesktop().browse(new java.net.URI(`https://github.com/Meywy/PurpleAddons`));
-    }
-
-    // Dungeons \\
-    @SwitchProperty({
-        name: "Auto Potion",
-        description: "Automatically opens potion bag on start of the run",
+    .addSwitch({
         category: "Dungeons",
-        subcategory: "General",
+        configName: "bloodDone",
+        title: "Blood Done",
+        description: "Announces when blood room is done",
     })
-    autopot = false;
-    @SwitchProperty({
-        name: "Blood Ready",
-        description: "Notify when blood mobs spawned",
+    .addSwitch({
         category: "Dungeons",
-        subcategory: "General",
+        configName: "bloodReady",
+        title: "Blood Ready",
+        description: "Announces when blood room is ready",
     })
-    bloodReady = false;
-    @SwitchProperty({
-        name: "Blood Done",
-        description: "Notify when blood is done",
+    .addSwitch({
         category: "Dungeons",
-        subcategory: "General",
+        configName: "leapAnnoucement",
+        title: "Leap Annoucement",
+        description: "Announces who you leaped to",
     })
-    bloodDone = false;
-    @SwitchProperty({
-        name: "Crush notify",
-        description: "Notify when storm is crushed",
+    .addSwitch({
         category: "Dungeons",
-        subcategory: "General"
+        subcategory: "M7",
+        configName: "ragAxe",
+        title: "Rag Axe",
+        description: "Shows title when to cast rag in M7",
     })
-    stormCrush = false;
-    @SwitchProperty({
-        name: "Energy Crystal Alert",
-        description: "Alerts when you have to place energy crystal",
+    .addSwitch({
         category: "Dungeons",
-        subcategory: "M7"
+        subcategory: "M7",
+        configName: "stormCrush",
+        title: "Storm Crush",
+        description: "Shows title when storm is crushed",
     })
-    EnergyCrystalAlert = false;
-    @SwitchProperty({
-        name: "Hide Players",
-        description: "Hides players at dev",
+    .addSwitch({
         category: "Dungeons",
-        subcategory: "Devices"
+        subcategory: "M7",
+        configName: "crystalAlert",
+        title: "Crystal Alert",
+        description: "Alerts you when you have energy crystal in your inventory",
     })
-    hidePlayers = false;
-    @SwitchProperty({
-        name: "Wish",
-        description: "Annouces when to wish in F7/M7",
-        category: "Dungeons",
-        subcategory: "Heal and Tonk"
+    .addSwitch({
+        category: "Slayers",
+        configName: "slayerFailed",
+        title: "Slayer Reminder",
+        description: "Reminds you to start a new slayer quest after failing one",
     })
-    healerWish = false;
-    @SwitchProperty({
-        name: "Tank Ult",
-        description: "Annouces when to ult",
-        category: "Dungeons",
-        subcategory: "Heal and Tonk"
-    })
-    tankUlt = false;
-    @SwitchProperty({
-        name: "Twilight Notify",
-        description: "Notifies when twilight arrow poison is needed",
-        category: "Dungeons",
-        subcategory: "M7"
-    })
-    TwilightNotify = false;
-    @SwitchProperty({
-        name: "Rag",
-        description: "Tells when rag casts",
-        category: "Dungeons",
-        subcategory: "M7"
-    })
-    ragAxe = false;
-    @SwitchProperty({
-        name: "Leap Annoucemet",
-        description: "Annouces on leap",
-        category: "Dungeons",
-        subcategory: "General"
-    })
-    leapAnnouce = false;
-    @SwitchProperty({
-        name: "Debuff waypoints",
-        description: "waypoints for debuff",
-        category: "Dungeons",
-        subcategory: "M7"
-    })
-    debuffWp = false;
-    @SwitchProperty({
-        name: "ArrowStack waypoints",
-        description: "waypoints for arrow stack",
-        category: "Dungeons",
-        subcategory: "General"
-    })
-    ArrowStackWayPoints = false;
-    @SwitchProperty({
-        name: "PosMsgs",
-        category: "Dungeons",
-        subcategory: "M7"
-    })
-    posMsgs = false;
-
-    // Mining \\
-    @SwitchProperty({
-        name: "Mining Ability",
-        description: "Annouces when mining ability is ready",
+    .addSwitch({
         category: "Mining",
-        subcategory: "General"
+        configName: "abilityAlert",
+        title: "Ability Alert",
+        description: "Alerts you when your ability is ready"
     })
-    miningAbility = false;
-
-    // Misc \\
-    @SwitchProperty({
-        name: "Clean Chat",
-        description: "Cleans chat from unwanted messages",
-        category: "Misc"
+    .addSwitch({
+        category: "Mining",
+        configName: "fetchurItems",
+        title: "Fetchur Items",
+        description: "Shows items u need to give to Fetchur",
     })
-    cleanChat = false;
-    @SwitchProperty({
-        name: "Cleaner Stash",
-        description: "Makes the stash message much more cleaner",
-        category: "Misc"
+    .addSwitch({
+        category: "Misc",
+        configName: "noSelfieCam",
+        title: "Remove Selfie Cam",
+        description: "Disables selfie camera",
     })
-    cleanerStash = false;
-
-    constructor() {
-        this.initialize(this);
-        this.setCategoryDescription("General", "&5&lDev: Purple")
-    }
-}
-
-export default new Settings();
+    
+const config = new Settings("PurpleAddons", defaultConf, "data/colorScheme.json", "PA Module Settings")
+export default () => config.settings

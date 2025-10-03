@@ -1,8 +1,8 @@
 {
-    "name": "PurpleAddons",
-    "creator": "purple",
-    "description": "By skyblock player fo skyblock players",
-    "version": "2.0.2",
-    "requires": ["Vigilance", "BloomCore", "PogData", "Axios"],
-    "entry": "index.js"
-  }
+  "name": "PurpleAddons",
+  "creator": "Meywy",
+  "description": "PurpleAddons",
+  "entry": "index.js",
+  "version": "1.1.1",
+  "requires": ["Amaterasu", "axios", "BloomCore"]
+}

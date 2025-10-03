@@ -1,8 +1,7 @@
+import { prefix } from "../../utils/utils";
+
 register("command", (args) => {
     switch(args) {
-        case undefined:
-            ChatLib.chat("&5Usage: &f/f [1-7]");
-            break;
         case '1':
             ChatLib.command("joininstance catacombs_floor_one");
             break;
@@ -24,15 +23,15 @@ register("command", (args) => {
         case '7':
             ChatLib.command("joininstance catacombs_floor_seven");
             break;
+        default:
+            ChatLib.chat(prefix("&5Usage: &f/floor [1-7]"));
+            break;
         
     }
-}).setName('f')
+}).setName('floor')
 
 register("command", (args) => {
     switch(args) {
-        case undefined:
-            ChatLib.chat("&5Usage: &f/m [1-7]");
-            break;
         case '1':
             ChatLib.command("joininstance master_catacombs_floor_one");
             break;
@@ -54,15 +53,15 @@ register("command", (args) => {
         case '7':
             ChatLib.command("joininstance master_catacombs_floor_seven");
             break;
+        default:
+            ChatLib.chat(prefix("&5Usage: &f/mm [1-7]"));
+            break;
         
     }
-}).setName('m')
+}).setName('mm')
 
 register("command", (args) => {
     switch(args) {
-        case undefined:
-            ChatLib.chat("&5Usage: &f/k [1-5]");
-            break;
         case '1':
             ChatLib.command("joininstance kuudra_normal");
             break;
@@ -77,6 +76,9 @@ register("command", (args) => {
             break;
         case '5':
             ChatLib.command("joininstance kuudra_infernal");
+            break;
+        default:
+            ChatLib.chat(prefix("&5Usage: &f/k [1-5]"));
             break;        
     }
 }).setName('k')
