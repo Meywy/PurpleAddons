@@ -62,6 +62,12 @@ const defaultConf = new DefaultConfig("PurpleAddons", "data/settings.json")
         description: "Shows items u need to give to Fetchur",
     })
     .addSwitch({
+        category: "Alerts",
+        configName: "tubaAlert",
+        title: "Tuba Alert",
+        description: "Alerts you when Weird/er Tuba runs out"
+    })
+    .addSwitch({
         category: "Misc",
         configName: "noSelfieCam",
         title: "Remove Selfie Cam",
