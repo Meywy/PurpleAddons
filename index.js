@@ -9,7 +9,6 @@ import "./features/dungeons/leapAnnoucement"
 import "./features/commands/gfs"
 import "./features/commands/instanceJoin"
 
-import "./features/misc/backend"
 import "./features/misc/removeSelfieCam"
 
 import "./features/mining/abilityAlert"
