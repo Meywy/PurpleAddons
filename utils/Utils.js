@@ -32,3 +32,7 @@ register("step", () => {
         notePling.value = false
     }
 })
+
+export function invCheck(item) {
+    Player.getInventory().getItems().find(a => a?.getName())?.includes(item)
+}
