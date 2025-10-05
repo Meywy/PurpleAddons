@@ -4,5 +4,5 @@
   "description": "PurpleAddons",
   "entry": "index.js",
   "version": "1.1.1",
-  "requires": ["Amaterasu", "axios", "BloomCore"]
+  "requires": ["Amaterasu", "axios", "BloomCore", "sleep"]
 }
