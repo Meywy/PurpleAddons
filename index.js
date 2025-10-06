@@ -17,6 +17,7 @@ import "./features/mining/fetchur"
 import "./features/slayers/reminder"
 
 import "./features/alerts/tuba"
+import "./features/alerts/katana"
 
 import "./utils/firstLoad"
 
