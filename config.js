@@ -68,6 +68,12 @@ const defaultConf = new DefaultConfig("PurpleAddons", "data/settings.json")
         description: "Alerts you when Weird/er Tuba runs out"
     })
     .addSwitch({
+        category: "Alerts",
+        configName: "katanaAlert",
+        title: "Katana Alert",
+        description: "Alerts you when soulcry runs out"
+    })
+    .addSwitch({
         category: "Misc",
         configName: "noSelfieCam",
         title: "Remove Selfie Cam",
