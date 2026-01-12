@@ -36,3 +36,18 @@ register("step", () => {
 export function invCheck(item) {
     Player.getInventory().getItems().find(a => a?.getName())?.includes(item)
 }
+
+export function extractChatPlayerName(message) {
+    const colonIndex = message.indexOf(":")
+    if (colonIndex === -1) return null
+
+    const header = message.substring(0, colonIndex).trim()
+    const withoutChannel = header.replace(/^(?:Party|Guild|Officer|Co-op|Dungeon|Shout|All|From|To) >\s*/i, "")
+    const withoutRanks = withoutChannel.replace(/\[[^\]]+\]\s*/g, "").trim()
+    const playerMatch = withoutRanks.match(/([A-Za-z0-9_]{1,16})$/)
+    return playerMatch ? playerMatch[1] : null
+}
+
+export function escapeRegExp(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}

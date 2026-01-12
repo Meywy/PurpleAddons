@@ -1,0 +1,92 @@
+[
+    {
+        "category": "Dungeons",
+        "settings": [
+            {
+                "type": 6,
+                "name": "bloodDone",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "bloodReady",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "leapAnnoucement",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "ragAxe",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "stormCrush",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "crystalAlert",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "eeAlert",
+                "value": true
+            }
+        ]
+    },
+    {
+        "category": "Slayers",
+        "settings": [
+            {
+                "type": 6,
+                "name": "slayerFailed",
+                "value": false
+            }
+        ]
+    },
+    {
+        "category": "Mining",
+        "settings": [
+            {
+                "type": 6,
+                "name": "abilityAlert",
+                "value": true
+            },
+            {
+                "type": 6,
+                "name": "fetchurItems",
+                "value": true
+            }
+        ]
+    },
+    {
+        "category": "Alerts",
+        "settings": [
+            {
+                "type": 6,
+                "name": "tubaAlert",
+                "value": false
+            },
+            {
+                "type": 6,
+                "name": "katanaAlert",
+                "value": false
+            }
+        ]
+    },
+    {
+        "category": "Misc",
+        "settings": [
+            {
+                "type": 6,
+                "name": "noSelfieCam",
+                "value": true
+            }
+        ]
+    }
+]

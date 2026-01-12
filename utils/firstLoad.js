@@ -6,7 +6,7 @@ register("step", () => {
     data.firstLoad = false
     data.save()
     ChatLib.chat(line)
-    ChatLib.chat("&d&lThanks for using &5PurpleAddons!")
+    ChatLib.chat("&5PurpleAddons loaded!")
     ChatLib.chat(" ")
     ChatLib.chat("&dPrefix for config is /pa")
     ChatLib.chat(line)

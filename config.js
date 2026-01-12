@@ -44,6 +44,13 @@ const defaultConf = new DefaultConfig("PurpleAddons", "data/settings.json")
         description: "Alerts you when you have energy crystal in your inventory",
     })
     .addSwitch({
+        category: "Dungeons",
+        subcategory: "M7",
+        configName: "eeAlert",
+        title: "EE Alert",
+        description: "Alerts you when someone is at ee spot.",
+    })
+    .addSwitch({
         category: "Slayers",
         configName: "slayerFailed",
         title: "Slayer Reminder",

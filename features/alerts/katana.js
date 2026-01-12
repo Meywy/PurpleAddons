@@ -1,4 +1,4 @@
-import config from "../../cofig"
+import config from "../../config"
 import sleep from "sleep"
 import { displayTitle } from "../../utils/UATitle"
 

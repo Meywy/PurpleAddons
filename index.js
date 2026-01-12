@@ -5,6 +5,7 @@ import "./features/dungeons/blood"
 import "./features/dungeons/storm"
 import "./features/dungeons/crystal"
 import "./features/dungeons/leapAnnoucement"
+import "./features/dungeons/locationAnnouncement"
 
 import "./features/commands/gfs"
 import "./features/commands/instanceJoin"
