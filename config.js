@@ -2,8 +2,6 @@ import Settings from "../Amaterasu/core/Settings"
 import DefaultConfig from "../Amaterasu/core/DefaultConfig"
 
 const defaultConf = new DefaultConfig("PurpleAddons", "data/settings.json")
-
-    
     .addSwitch({
         category: "Dungeons",
         configName: "bloodDone",
